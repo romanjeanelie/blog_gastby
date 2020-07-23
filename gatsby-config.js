@@ -1,32 +1,29 @@
 module.exports = {
   siteMetadata: {
-    title: `ESQUIF`,
+    title: `Hardcoders`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `romanDevFront`,
-    bio: `bloubiboulga`,
-    authorImage: `https://img-19.ccm2.net/aJScABa_qBQwp4s7EtJ3qKh22Hg=/230x/8a4cb6424f40412a8c3f5ceaf6aac207/ccm-encyclopedia/5hHuBfsx-hires-s-.png`,
+    author: `Antho Welc`,
+    bio: `Dév JavaScript | Papa | Autodidacte. Créateur du programme Hardcoders. J’enseigne comment gagner sa vie en créant des sites et apps modernes.`,
+    authorImage: `https://pbs.twimg.com/profile_images/1090998219369316352/YKDhei7s_400x400.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/blog/`,
-      },
+      options: { name: `blog`, path: `${__dirname}/blog/` },
     },
     `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-plugin-less`,
+      resolve: "gatsby-plugin-less",
       options: {
-        modifyVars: require(`./src/theme/antd.js`),
-        // Needed to load antdesign less files
+        modifyVars: require("./src/theme/antd.js"),
+        // Needed to load antdesign less files.
         javascriptEnabled: true,
       },
     },
     {
-      resolve: `gatsby-plugin-antd`,
+      resolve: "gatsby-plugin-antd",
       options: {
         // Activate less files
         style: true,
@@ -55,6 +52,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // 'gatsby-plugin-offline',
   ],
 }

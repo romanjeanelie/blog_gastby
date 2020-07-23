@@ -3,14 +3,15 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import Bio from "../components/bio"
 import SEO from "../components/seo"
 
 import { List } from "antd"
-import { node } from "prop-types"
 
 const IndexPage = ({ data }) => (
   <Layout page="1">
-    <SEO title="Home" />
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+
     <List
       itemLayout="horizontal"
       dataSource={data.allMarkdownRemark.edges}
@@ -31,6 +32,7 @@ const IndexPage = ({ data }) => (
         </List.Item>
       )}
     />
+    <Bio />
   </Layout>
 )
 
@@ -41,7 +43,7 @@ export const query = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id

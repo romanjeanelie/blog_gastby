@@ -21,12 +21,17 @@ exports.createPages = ({ graphql, actions }) => {
     console.log(JSON.stringify(result, null, 2))
     const posts = result.data.allMarkdownRemark.edges
 
-    posts.forEach(post => {
+    posts.forEach((post, index) => {
+      const next = index === posts.length - 1 ? null : posts[index + 1].node
+      const prev = index === 0 ? null : posts[index - 1].node
+
       createPage({
         path: post.node.frontmatter.slug,
         component: path.resolve(`./src/templates/post.js`),
         context: {
           slug: post.node.frontmatter.slug,
+          next,
+          prev,
         },
       })
     })
