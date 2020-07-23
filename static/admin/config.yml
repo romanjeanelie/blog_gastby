@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: roman7501/blog_gastby
 
 media_folder: static/assets
 public_folder: assets
